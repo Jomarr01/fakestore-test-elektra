@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+.card img {
+  height: 150px;
+  object-fit: contain;
+}
+.detail-img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: contain;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.checkout-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
