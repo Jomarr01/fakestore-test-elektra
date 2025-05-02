@@ -1,17 +1,31 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import ProductDetail from './pages/ProductDetail';
-import Checkout from './pages/Checkout';
+import { CartProvider } from './contexts/CartContext';
+import Header from './components/Header/Header';
 
-const App = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/product/:id" element={<ProductDetail />} />
-      <Route path="/checkout" element={<Checkout />} />
-    </Routes>
-  </Router>
-);
+import HomePage from './pages/HomePage/HomePage';
+import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage';
+import Checkout from './pages/Checkout/Checkout';
+import NotFoundPage from './pages/NotFoundPage';
+
+import './styles/global.css';
+
+const App: React.FC = () => {
+  return (
+    <CartProvider>
+      <Router>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/:productId" element={<ProductDetailPage />} />
+            <Route path="/cart" element={<Checkout />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+      </Router>
+    </CartProvider>
+  );
+};
 
 export default App;

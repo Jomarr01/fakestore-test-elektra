@@ -1,0 +1,117 @@
+@import "../../styles/variables.css";
+
+.title {
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--primary-color);
+}
+
+.emptyCart {
+  text-align: center;
+  padding: 32px;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.emptyCart p {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.continueShopping {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.continueShopping:hover {
+  background-color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.cartItemsList {
+  margin-bottom: 32px;
+  background-color: var(--card-background);
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cartSummary {
+  background-color: var(--card-background);
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.summaryDetails {
+  flex-grow: 1;
+}
+
+.totalText {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.totalAmount {
+  color: var(--primary-color);
+  margin-left: 8px;
+}
+
+.summaryActions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.clearButton,
+.checkoutButton {
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .cartSummary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .totalText {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  .summaryActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .clearButton,
+  .checkoutButton {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .summaryActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .clearButton,
+  .checkoutButton {
+    width: 100%;
+  }
+}
